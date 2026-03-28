@@ -1,6 +1,9 @@
 {
   "name": "HA victron_vedirect Dev Container",
   "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "runArgs": [
+    "--privileged"
+  ],
   "postCreateCommand": "bash .devcontainer/setup-shell.sh && bash .devcontainer/setup-git.sh && script/setup/setup",
   "containerEnv": {
     // Home Assistant version to install in the devcontainer.
@@ -70,6 +73,12 @@
         "python.terminal.activateEnvironment": true,
         "python.terminal.activateEnvInCurrentTerminal": true,
         "python.testing.pytestArgs": ["--no-cov"],
+        "python.analysis.extraPaths": [
+            "${containerWorkspaceFolder}/tests"
+        ],
+        "python.autoComplete.extraPaths": [
+            "${containerWorkspaceFolder}/tests"
+        ],
         "terminal.integrated.profiles.linux": {
           "zsh": {
             "path": "/usr/bin/zsh"

@@ -14,7 +14,7 @@ requires-python = ">=3.13.2"
 packages = ["custom_components.victron_vedirect"]
 
 [tool.pyright]
-include = ["custom_components/victron_vedirect"]
+include = ["custom_components/victron_vedirect", "tests"]
 exclude = [
     "**/node_modules",
     "**/__pycache__",

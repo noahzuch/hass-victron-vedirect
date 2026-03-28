@@ -1,0 +1,160 @@
+{
+  "config": {
+    "step": {
+      "name": "foobar",
+      "user": {
+        "data": {
+          "name": "Name",
+          "device_type": "Device Type",
+          "port": "Serial port"
+        }
+      }
+    },
+    "error": {
+       "cannot_connect": "Failed to connect: {error_detail}"
+      },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  },
+  "entity":{
+    "sensor":{
+      "V": { "name": "Main or channel 1 (battery) voltage" },
+      "V2": { "name": "Channel 2 (battery) voltage" },
+      "V3": { "name": "Channel 3 (battery) voltage" },
+      "VS": { "name": "Auxiliary (starter) voltage" },
+      "VM": { "name": "Mid-point voltage of the battery bank" },
+      "DM": { "name": "Mid-point deviation of the battery bank" },
+      "VPV": { "name": "Panel voltage" },
+      "PPV": { "name": "Panel power" },
+      "I": { "name": "Main or channel 1 battery current" },
+      "I2": { "name": "Channel 2 battery current" },
+      "I3": { "name": "Channel 3 battery current" },
+      "IL": { "name": "Load current" },
+      "LOAD": {
+        "name": "Load output state (ON/OFF)",
+        "state": {
+          "OFF": "Off",
+          "ON": "On"
+        }
+      },
+      "T": { "name": "Battery temperature" },
+      "P": { "name": "Instantaneous power" },
+      "CE": { "name": "Consumed Amp Hours" },
+      "SOC": { "name": "State-of-charge" },
+      "TTG": { "name": "Time-to-go" },
+      "Alarm": { "name": "Alarm condition active" },
+      "Relay": { "name": "Relay state",
+        "state": {
+          "OFF": "Off",
+          "ON": "On"
+        }
+      },
+      "AR": { "name": "Alarm reason" },
+      "OR": { "name": "Off reason",
+        "state": {
+          "NO_INPUT_POWER": "No input power",
+          "POWER_OFF_SWITCH": "Switched off by switch",
+          "POWER_OFF_REGISTER": "Switched off by register",
+          "REMOTE_INPUT": "Remote input",
+          "PROTECTION_ACTIVE": "Protection active",
+          "PAY_AS_YOU_GO_OUT_OF_CREDIT": "Pay-as-you-go out of credit",
+          "BMS": "Battery management system",
+          "ENGINE_SHUTDOWN": "Engine shutdown",
+          "ANALYSING_INPUT_VOLTAGE": "Analyzing input voltage"
+        }
+      },
+      "H1": { "name": "Depth of the deepest discharge" },
+      "H2": { "name": "Depth of the last discharge" },
+      "H3": { "name": "Depth of the average discharge" },
+      "H4": { "name": "Number of charge cycles" },
+      "H5": { "name": "Number of full discharges" },
+      "H6": { "name": "Cumulative Amp Hours drawn" },
+      "H7": { "name": "Minimum main (battery) voltage" },
+      "H8": { "name": "Maximum main (battery) voltage" },
+      "H9": { "name": "Number of seconds since last full charge" },
+      "H10": { "name": "Number of automatic synchronizations" },
+      "H11": { "name": "Number of low main voltage alarms" },
+      "H12": { "name": "Number of high main voltage alarms" },
+      "H13": { "name": "Number of low auxiliary voltage alarms" },
+      "H14": { "name": "Number of high auxiliary voltage alarms" },
+      "H15": { "name": "Minimum auxiliary (battery) voltage" },
+      "H16": { "name": "Maximum auxiliary (battery) voltage" },
+      "H17": { "name": "Amount of discharged energy (BMV) / Amount of produced energy (DC monitor)" },
+      "H18": { "name": "Amount of charged energy (BMV) / Amount of consumed energy (DC monitor)" },
+      "H19": { "name": "Yield total (user resettable counter)" },
+      "H20": { "name": "Yield today" },
+      "H21": { "name": "Maximum power today" },
+      "H22": { "name": "Yield yesterday" },
+      "H23": { "name": "Maximum power yesterday" },
+      "ERR": {
+        "name": "Error code",
+        "state":{
+          "NO_ERROR": "No error",
+          "BATTERY_VOLTAGE_TOO_HIGH": "Battery voltage too high",
+          "CHARGER_TEMPERATURE_TOO_HIGH": "Charger temperature too high",
+          "CHARGER_OVER_CURRENT": "Charger overcurrent",
+          "CHARGER_CURRENT_REVERSED": "Charger current reversed",
+          "BULK_TIME_LIMIT_EXCEEDED": "Bulk time limit exceeded",
+          "CURRENT_SENSOR_ISSUE": "Current sensor issue",
+          "TERMINALS_OVERHEATED": "Terminals overheated",
+          "CONVERTER_ISSUE": "Converter issue",
+          "INPUT_VOLTAGE_TOO_HIGH": "Input voltage too high",
+          "INPUT_CURRENT_TOO_HIGH": "Input current too high",
+          "INPUT_SHUTDOWN_BATTERY_VOLTAGE": "Input shutdown (due to excessive battery voltage)",
+          "INPUT_SHUTDOWN_CURRENT_FLOW_OFF_MODE": "Input shutdown (due to current flow during off mode)",
+          "LOST_COMMUNICATION_WITH_DEVICE": "Lost communication with one of devices",
+          "SYNCHRONISED_CHARGING_CONFIGURATION_ISSUE": "Synchronised charging device configuration issue",
+          "BMS_CONNECTION_LOST": "BMS connection lost",
+          "NETWORK_MISCONFIGURED": "Network misconfigured",
+          "FACTORY_CALIBRATION_DATA_LOST": "Factory calibration data lost",
+          "INVALID_INCOMPATIBLE_FIRMWARE": "Invalid/incompatible firmware",
+          "USER_SETTINGS_INVALID": "User settings invalid"
+        }
+      },
+      "CS": {
+        "name": "State",
+        "state":{
+          "OFF": "Off",
+          "LOW_POWER": "Low power",
+          "FAULT": "Fault",
+          "BULK": "Bulk",
+          "ABSORPTION": "Absorption",
+          "FLOAT": "Float",
+          "STORAGE": "Storage",
+          "EQUALIZE_MANUAL": "Equalize (manual)",
+          "INVERTING": "Inverting",
+          "POWER_SUPPLY": "Power supply",
+          "STARTING_UP": "Starting-up",
+          "REPEATED_ABSORPTION": "Repeated absorption",
+          "AUTO_EQUALIZE_RECONDITION": "Auto equalize / Recondition",
+          "BATTERY_SAFE": "BatterySafe",
+          "EXTERNAL_CONTROL": "External Control"
+        }
+      },
+      "BMV": { "name": "Model description (deprecated)" },
+      "FW": { "name": "Firmware version (16 bit)" },
+      "FWE": { "name": "Firmware version (24 bit)" },
+      "PID": { "name": "Product ID" },
+      "SER#": { "name": "Serial number" },
+      "HSDS": { "name": "Day sequence number (0..364)" },
+      "MODE": { "name": "Device mode" },
+      "AC_OUT_V": { "name": "AC output voltage" },
+      "AC_OUT_I": { "name": "AC output current" },
+      "AC_OUT_S": { "name": "AC output apparent power" },
+      "WARN": { "name": "Warning reason" },
+      "MPPT": {
+        "name": "Tracker operation mode",
+        "state":{
+          "OFF": "Off",
+          "VOLTAGE_OR_CURRENT_LIMITED": "Voltage or current limited",
+          "MPP_TRACKER_ACTIVE": "MPP tracker active"
+        }
+      },
+      "MON": { "name": "DC monitor mode" },
+      "DC_IN_V": { "name": "DC input voltage" },
+      "DC_IN_I": { "name": "DC input current" },
+      "DC_IN_P": { "name": "DC input power" }
+    }
+  }
+}
