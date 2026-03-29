@@ -1,16 +1,11 @@
 from collections.abc import Callable
 from enum import Enum, StrEnum
-from logging import Logger
 import logging
-from typing import Type, cast
+from typing import cast
 
-from attr import dataclass
-from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.device_registry import DeviceInfo
-
-from custom_components.victron_vedirect.domain import VictronVEDirectConfigEntry
 from custom_components.victron_vedirect.const import CONF_DEVICE_TYPE, VEDirectKeys, VictronDeviceType
 from custom_components.victron_vedirect.coordinator import VictronVEDirectCoordinator
+from custom_components.victron_vedirect.domain import VictronVEDirectConfigEntry
 from homeassistant.components.sensor import SensorDeviceClass, SensorEntity, SensorEntityDescription, SensorStateClass
 from homeassistant.const import (
     PERCENTAGE,
@@ -22,6 +17,8 @@ from homeassistant.const import (
     UnitOfTime,
 )
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 _LOGGER = logging.getLogger(__name__)
@@ -85,7 +82,7 @@ class MpptOptions(StrEnum):
     VOLTAGE_OR_CURRENT_LIMITED = "1"
     MPP_TRACKER_ACTIVE = "2"
 
-def enum_value_fn(enum: Type[Enum]):
+def enum_value_fn(enum: type[Enum]):
     """Creates a value function to map an enums value to the name of the enum."""
     def converter(value: str):
         try:

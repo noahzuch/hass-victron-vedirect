@@ -49,13 +49,12 @@ class VEDirectProtocol(asyncio.Protocol):
                     self.text_buffer.clear()
                     self.current_field_key = None
 
-                    self.text_byte_sum += byte
                     if byte == TEXT_HEADER1:
+                        self.text_byte_sum += byte
                         self.state = RecieveState.WAIT_HEADER
                     elif byte == TEXT_HEADER2:
+                        self.text_byte_sum += byte
                         self.state = RecieveState.PARSE_KEY
-                    elif byte == HEX_HEADER:
-                        self.state = RecieveState.HEX
 
                 case RecieveState.PARSE_KEY:
                     self.text_byte_sum += byte
